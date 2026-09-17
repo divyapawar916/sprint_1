@@ -1,0 +1,423 @@
+/* ============================================================
+   SERVICONNECT - CUSTOMER MY BOOKINGS
+   ============================================================ */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ============================================================
+   PAGE
+   ============================================================ */
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: #f4f8f8;
+
+    color: #163b42;
+
+    min-height: 100vh;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.page-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 24px 45px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e1e9e9;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+.page-header h1 {
+    color: #123c43;
+
+    font-size: 30px;
+
+    margin-bottom: 6px;
+}
+
+
+.page-header p {
+    color: #718287;
+
+    font-size: 15px;
+}
+
+
+/* ============================================================
+   DASHBOARD BUTTON
+   ============================================================ */
+
+.back-btn {
+    text-decoration: none;
+
+    padding: 11px 20px;
+
+    border-radius: 8px;
+
+    background: #087f7b;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+
+.back-btn:hover {
+    background: #066864;
+}
+
+
+/* ============================================================
+   BOOKINGS CONTAINER
+   ============================================================ */
+
+.bookings-container {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 40px 25px;
+}
+
+
+/* ============================================================
+   BOOKING CARD
+   ============================================================ */
+
+.booking-card {
+    background: #ffffff;
+
+    padding: 28px;
+
+    margin-bottom: 25px;
+
+    border-radius: 16px;
+
+    border: 1px solid #e0e9e9;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+
+    transition: 0.2s ease;
+}
+
+
+.booking-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.09);
+}
+
+
+/* ============================================================
+   BOOKING HEADER
+   ============================================================ */
+
+.booking-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid #edf1f1;
+}
+
+
+.booking-header h2 {
+    color: #123c43;
+
+    font-size: 22px;
+}
+
+/* ============================================================
+   BOOKING STATUS
+   ============================================================ */
+
+.status {
+    display: inline-block;
+
+    padding: 7px 14px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-transform: capitalize;
+}
+
+
+/* ------------------------------------------------------------
+   PENDING
+   ------------------------------------------------------------ */
+
+.status.pending {
+    background: #fff4d6;
+
+    color: #9a6b00;
+}
+
+
+/* ------------------------------------------------------------
+   ACCEPTED
+   ------------------------------------------------------------ */
+
+.status.accepted {
+    background: #e6f6f4;
+
+    color: #087f7b;
+}
+
+
+/* ------------------------------------------------------------
+   REJECTED
+   ------------------------------------------------------------ */
+
+.status.rejected {
+    background: #fdeaea;
+
+    color: #b33a3a;
+}
+
+
+/* ------------------------------------------------------------
+   COMPLETED
+   ------------------------------------------------------------ */
+
+.status.completed {
+    background: #e7eef5;
+
+    color: #315f68;
+}
+
+
+/* ------------------------------------------------------------
+   CANCELLED
+   ------------------------------------------------------------ */
+
+.status.cancelled {
+    background: #eeeeee;
+
+    color: #666666;
+}
+
+
+/* ============================================================
+   BOOKING DETAILS
+   ============================================================ */
+
+.booking-details {
+    padding-top: 20px;
+}
+
+
+.booking-details p {
+    margin-bottom: 12px;
+
+    color: #53696e;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+
+.booking-details strong {
+    color: #173d44;
+}
+
+
+/* ============================================================
+   NO BOOKINGS
+   ============================================================ */
+
+.no-bookings {
+    text-align: center;
+
+    background: #ffffff;
+
+    padding: 60px 30px;
+
+    border-radius: 16px;
+
+    border: 1px solid #e0e9e9;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+
+.no-bookings h2 {
+    color: #123c43;
+
+    margin-bottom: 10px;
+}
+
+
+.no-bookings p {
+    color: #718287;
+
+    font-size: 15px;
+
+    margin-bottom: 22px;
+}
+
+
+/* ============================================================
+   FIND SERVICES BUTTON
+   ============================================================ */
+
+.no-bookings a {
+    display: inline-block;
+
+    text-decoration: none;
+
+    padding: 11px 22px;
+
+    border-radius: 8px;
+
+    background: #087f7b;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+
+.no-bookings a:hover {
+    background: #066864;
+}
+
+
+/* ============================================================
+   MOBILE RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+    .page-header {
+        padding: 20px;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+        flex-direction: column;
+    }
+
+
+    .bookings-container {
+        padding: 25px 15px;
+    }
+
+
+    .booking-card {
+        padding: 22px;
+    }
+
+
+    .booking-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+}
+/* ============================================================
+   CANCEL BOOKING
+   ============================================================ */
+
+.booking-actions {
+    margin-top: 20px;
+}
+
+
+/* Cancel button */
+.cancel-btn {
+    padding: 10px 20px;
+
+    border: 1px solid #d8a0a0;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #b33a3a;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+/* Hover effect */
+.cancel-btn:hover {
+    background: #fdeaea;
+
+    border-color: #c77b7b;
+}
+.no-bookings {
+    text-align: center;
+    padding: 50px 20px;
+    background: #ffffff;
+    border-radius: 16px;
+    margin: 20px 0;
+}
+
+.no-bookings h2 {
+    color: #123c43;
+    margin-bottom: 10px;
+}
+
+.no-bookings p {
+    color: #718287;
+    margin-bottom: 20px;
+}
+
+.no-bookings a {
+    display: inline-block;
+    padding: 11px 20px;
+    background: #087f7b;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.no-bookings a:hover {
+    background: #066864;
+}

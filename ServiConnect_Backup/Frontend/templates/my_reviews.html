@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Reviews - ServiConnect</title>
+
+
+    <!-- =====================================================
+         MY REVIEWS CSS
+         ===================================================== -->
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/my_reviews.css') }}">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         PAGE HEADER
+         ===================================================== -->
+
+    <header class="page-header">
+
+        <div>
+
+            <h1>
+                My Reviews
+            </h1>
+
+            <p>
+                View the reviews and ratings you have given.
+            </p>
+
+        </div>
+
+
+        <!-- Back to dashboard -->
+
+        <a href="{{ url_for('dashboard') }}"
+           class="back-btn">
+
+            ← Dashboard
+
+        </a>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         REVIEWS CONTAINER
+         ===================================================== -->
+
+    <main class="reviews-container">
+
+
+        {% if reviews %}
+
+
+            <!-- =================================================
+                 DISPLAY REVIEWS
+                 ================================================= -->
+
+            {% for review in reviews %}
+
+
+                <div class="review-card">
+
+
+                    <!-- =========================================
+                         REVIEW HEADER
+                         ========================================= -->
+
+                    <div class="review-header">
+
+                        <div>
+
+                            <h2>
+                                {{ review.service_name }}
+                            </h2>
+
+                            <p class="provider-name">
+                                Provider:
+                                {{ review.business_name }}
+                            </p>
+
+                        </div>
+
+
+                        <!-- Rating -->
+
+                        <div class="rating">
+
+                            ⭐ {{ review.rating }}/5
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         REVIEW COMMENT
+                         ========================================= -->
+
+                    <div class="review-comment">
+
+                        {% if review.comment %}
+
+                            <p>
+                                "{{ review.comment }}"
+                            </p>
+
+                        {% else %}
+
+                            <p>
+                                No comment provided.
+                            </p>
+
+                        {% endif %}
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         REVIEW DATE
+                         ========================================= -->
+
+                    <div class="review-date">
+
+                        Reviewed on:
+                        {{ review.review_date }}
+
+                    </div>
+
+
+                </div>
+
+
+            {% endfor %}
+
+
+        {% else %}
+
+
+            <!-- =================================================
+                 NO REVIEWS
+                 ================================================= -->
+
+            <div class="no-reviews">
+
+                <div class="empty-icon">
+                    ⭐
+                </div>
+
+                <h2>
+                    No Reviews Yet
+                </h2>
+
+                <p>
+                    You haven't submitted any reviews yet.
+                </p>
+
+                <a href="{{ url_for('my_bookings') }}">
+                    View My Bookings
+                </a>
+
+            </div>
+
+
+        {% endif %}
+
+
+    </main>
+
+
+</body>
+
+</html>

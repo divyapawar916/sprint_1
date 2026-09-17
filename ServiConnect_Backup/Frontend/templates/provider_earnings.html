@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Earnings - ServiConnect</title>
+
+
+    <!-- =====================================================
+         PROVIDER EARNINGS CSS
+         ===================================================== -->
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/provider_earnings.css') }}">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         PAGE HEADER
+         ===================================================== -->
+
+    <header class="page-header">
+
+        <div>
+
+            <h1>
+                Earnings
+            </h1>
+
+            <p>
+                Track your completed services and earnings.
+            </p>
+
+        </div>
+
+
+        <!-- Back to dashboard -->
+
+        <a href="{{ url_for('dashboard') }}"
+           class="back-btn">
+
+            ← Dashboard
+
+        </a>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         EARNINGS CONTAINER
+         ===================================================== -->
+
+    <main class="earnings-container">
+
+
+        <!-- =================================================
+             SUMMARY CARDS
+             ================================================= -->
+
+        <section class="summary-cards">
+
+
+            <!-- Total Earnings -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    💰
+                </div>
+
+                <div>
+
+                    <p>
+                        Total Earnings
+                    </p>
+
+                    <h2>
+                        ₹{{ total_earnings }}
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Completed Services -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    ✅
+                </div>
+
+                <div>
+
+                    <p>
+                        Completed Services
+                    </p>
+
+                    <h2>
+                        {{ completed_count }}
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             COMPLETED BOOKINGS
+             ================================================= -->
+
+        <section class="bookings-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Completed Services
+                    </h2>
+
+                    <p>
+                        Your completed customer bookings.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            {% if bookings %}
+
+
+                {% for booking in bookings %}
+
+                    <div class="earning-card">
+
+
+                        <!-- Service information -->
+
+                        <div class="earning-info">
+
+                            <h3>
+                                {{ booking.service_name }}
+                            </h3>
+
+                            <p>
+                                Customer:
+                                {{ booking.customer_name }}
+                            </p>
+
+                            <p>
+                                Date:
+                                {{ booking.booking_date }}
+                            </p>
+
+                        </div>
+
+
+                        <!-- Amount -->
+
+                        <div class="earning-amount">
+
+                            ₹{{ booking.price }}
+
+                        </div>
+
+
+                    </div>
+
+                {% endfor %}
+
+
+            {% else %}
+
+
+                <!-- =================================================
+                     NO COMPLETED BOOKINGS
+                     ================================================= -->
+
+                <div class="no-earnings">
+
+                    <div class="empty-icon">
+                        💰
+                    </div>
+
+                    <h2>
+                        No Earnings Yet
+                    </h2>
+
+                    <p>
+                        Your completed services will appear here.
+                    </p>
+
+                </div>
+
+
+            {% endif %}
+
+
+        </section>
+
+
+    </main>
+
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Providers - ServiConnect</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/providers.css') }}">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         PAGE HEADER
+         ===================================================== -->
+
+    <header class="page-header">
+
+        <div>
+
+            <h1>Trusted Service Providers</h1>
+
+            <p>
+                Discover professionals available on ServiConnect.
+            </p>
+
+        </div>
+
+        <a href="/"
+            class="back-btn">
+
+            ← Back to Home
+
+        </a>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         PROVIDERS
+         ===================================================== -->
+
+    <main class="providers-container">
+
+        {% if providers %}
+
+            <section class="providers-grid">
+
+                {% for provider in providers %}
+
+                    <div class="provider-card">
+
+                        <div class="provider-icon">
+                            👨‍🔧
+                        </div>
+
+                        <div class="provider-info">
+
+                            <h2>
+                                {{ provider.business_name }}
+                            </h2>
+
+                            <p class="service-area">
+                                📍 {{ provider.service_area }}
+                            </p>
+
+                            <p class="experience">
+                                💼 {{ provider.experience }} years experience
+                            </p>
+
+                            {% if provider.description %}
+
+                                <p class="description">
+                                    {{ provider.description }}
+                                </p>
+
+                            {% else %}
+
+                                <p class="description">
+                                    Professional service provider
+                                    available for your needs.
+                                </p>
+
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+
+            </section>
+
+        {% else %}
+
+            <div class="no-providers">
+
+                <div class="empty-icon">
+                    👨‍🔧
+                </div>
+
+                <h2>
+                    No Providers Available
+                </h2>
+
+                <p>
+                    There are currently no approved service providers.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </main>
+
+
+</body>
+
+</html>

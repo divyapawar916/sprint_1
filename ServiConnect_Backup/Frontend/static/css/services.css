@@ -1,0 +1,296 @@
+/* ==========================================================
+   SERVICONNECT SERVICES PAGE
+   ========================================================== */
+
+
+/* Remove default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Main page */
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #f5f8f8;
+
+    color: #17373c;
+}
+
+
+/* ==========================================================
+   PAGE CONTAINER
+   ========================================================== */
+
+.services-page {
+
+    min-height: 100vh;
+
+    padding: 30px 60px;
+}
+
+
+/* ==========================================================
+   HEADER
+   ========================================================== */
+
+.services-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 60px;
+}
+
+
+/* Logo */
+.logo {
+
+    font-size: 28px;
+
+    font-weight: bold;
+}
+
+
+/* Logo highlight */
+.logo span {
+
+    color: #167b78;
+}
+
+
+/* Back button */
+.back-btn {
+
+    text-decoration: none;
+
+    color: #167b78;
+
+    font-weight: bold;
+}
+
+
+/* ==========================================================
+   PAGE INTRO
+   ========================================================== */
+
+.page-intro {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+/* Small heading */
+.small-title {
+
+    color: #167b78;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+
+/* Main heading */
+.page-intro h1 {
+
+    font-size: 38px;
+
+    margin-bottom: 12px;
+}
+
+
+/* Description */
+.page-intro p:last-child {
+
+    color: #7a898c;
+
+    font-size: 16px;
+}
+
+
+/* ==========================================================
+   SEARCH
+   ========================================================== */
+
+.search-box {
+
+    max-width: 650px;
+
+    margin: 0 auto 50px;
+
+    background: white;
+
+    border: 1px solid #dfe8e8;
+
+    border-radius: 12px;
+
+    padding: 15px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.search-box input {
+
+    border: none;
+
+    outline: none;
+
+    width: 100%;
+
+    font-size: 15px;
+}
+
+
+/* ==========================================================
+   SERVICE SECTION
+   ========================================================== */
+
+.services-page h2 {
+
+    font-size: 24px;
+
+    margin-bottom: 22px;
+}
+
+
+/* ==========================================================
+   SERVICE GRID
+   ========================================================== */
+
+.service-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+/* ==========================================================
+   SERVICE CARD
+   ========================================================== */
+
+.service-card {
+
+    background: white;
+
+    border: 1px solid #e2eaea;
+
+    border-radius: 16px;
+
+    padding: 28px;
+
+    transition: 0.3s;
+}
+
+
+/* Hover effect */
+.service-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(20, 60, 66, 0.10);
+}
+
+
+/* Service icon */
+.service-icon {
+
+    font-size: 38px;
+
+    margin-bottom: 18px;
+}
+
+
+/* Service name */
+.service-card h3 {
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
+}
+
+
+/* Service description */
+.service-card p {
+
+    color: #7a898c;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Service button */
+.service-card button {
+
+    border: none;
+
+    background: none;
+
+    color: #167b78;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+    .services-page {
+
+        padding: 25px;
+    }
+
+    .service-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .service-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .page-intro h1 {
+
+        font-size: 30px;
+    }
+
+}

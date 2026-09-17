@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Write Review - ServiConnect</title>
+
+
+    <!-- =====================================================
+         WRITE REVIEW CSS
+         ===================================================== -->
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/write_review.css') }}">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         PAGE HEADER
+         ===================================================== -->
+
+    <header class="page-header">
+
+        <div>
+
+            <h1>
+                Write a Review
+            </h1>
+
+            <p>
+                Share your experience with this service.
+            </p>
+
+        </div>
+
+
+        <!-- Back to My Bookings -->
+
+        <a href="{{ url_for('my_bookings') }}"
+           class="back-btn">
+
+            ← My Bookings
+
+        </a>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         REVIEW FORM CONTAINER
+         ===================================================== -->
+
+    <main class="review-container">
+
+
+        <div class="review-card">
+
+
+            <!-- =================================================
+                 SERVICE INFORMATION
+                 ================================================= -->
+
+            <div class="service-info">
+
+                <h2>
+                    {{ booking.service_name }}
+                </h2>
+
+                <p>
+                    Provider:
+                    {{ booking.business_name }}
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 REVIEW FORM
+                 ================================================= -->
+
+            <form method="POST"
+                  action="{{ url_for('write_review',
+                                     booking_id=booking.booking_id) }}">
+
+
+                <!-- =============================================
+                     RATING
+                     ============================================= -->
+
+                <div class="form-group">
+
+                    <label for="rating">
+                        Rating
+                    </label>
+
+                    <select id="rating"
+                            name="rating"
+                            required>
+
+                        <option value="">
+                            Select Rating
+                        </option>
+
+                        <option value="5">
+                            ⭐⭐⭐⭐⭐ 5 - Excellent
+                        </option>
+
+                        <option value="4">
+                            ⭐⭐⭐⭐ 4 - Very Good
+                        </option>
+
+                        <option value="3">
+                            ⭐⭐⭐ 3 - Good
+                        </option>
+
+                        <option value="2">
+                            ⭐⭐ 2 - Fair
+                        </option>
+
+                        <option value="1">
+                            ⭐ 1 - Poor
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- =============================================
+                     COMMENT
+                     ============================================= -->
+
+                <div class="form-group">
+
+                    <label for="comment">
+                        Your Review
+                    </label>
+
+                    <textarea id="comment"
+                              name="comment"
+                              rows="6"
+                              placeholder="Tell us about your experience..."
+                              maxlength="500"></textarea>
+
+                </div>
+
+
+
+                <!-- =============================================
+                     SUBMIT BUTTON
+                     ============================================= -->
+
+                <button type="submit"
+                        class="submit-btn">
+
+                    ⭐ Submit Review
+
+                </button>
+
+
+            </form>
+
+
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>

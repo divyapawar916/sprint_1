@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Bookings - ServiConnect</title>
+
+    <!-- Customer bookings CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/my_bookings.css') }}">
+
+</head>
+
+<body>
+
+    <!-- =====================================================
+         PAGE HEADER
+         ===================================================== -->
+
+    <header class="page-header">
+
+        <div>
+
+            <h1>My Bookings</h1>
+
+            <p>
+                View and track your service bookings
+            </p>
+
+        </div>
+
+        <!-- Back to customer dashboard -->
+        <a href="{{ url_for('dashboard') }}"
+           class="back-btn">
+
+            ← Dashboard
+
+        </a>
+
+    </header>
+
+
+    <!-- =====================================================
+         BOOKINGS SECTION
+         ===================================================== -->
+
+    <main class="bookings-container">
+
+        {% if bookings %}
+
+            {% for booking in bookings %}
+
+                <!-- =================================================
+                     BOOKING CARD
+                     ================================================= -->
+
+                <div class="booking-card">
+
+                    <!-- Service information -->
+                    <div class="booking-header">
+
+                        <h2>
+                            {{ booking.service_name }}
+                        </h2>
+
+                        <span class="status {{ booking.status }}">
+                            {{ booking.status }}
+                        </span>
+
+                    </div>
+
+
+                    <!-- Booking information -->
+                    <div class="booking-details">
+
+                        <p>
+                            <strong>Provider:</strong>
+                            {{ booking.business_name }}
+                        </p>
+
+                        <p>
+                            <strong>Date:</strong>
+                            {{ booking.booking_date }}
+                        </p>
+
+                        <p>
+                            <strong>Time:</strong>
+                            {{ booking.booking_time }}
+                        </p>
+
+                        <p>
+                            <strong>Address:</strong>
+                            {{ booking.address }}
+                        </p>
+
+                        {% if booking.notes %}
+
+                            <p>
+                                <strong>Notes:</strong>
+                                {{ booking.notes }}
+                            </p>
+
+                        {% endif %}
+
+                    </div>
+
+
+                    <!-- =================================================
+                         CANCEL BOOKING
+                         ================================================= -->
+
+                    {% if booking.status == "pending" %}
+
+                        <div class="booking-actions">
+
+                            <form method="POST"
+                                  action="{{ url_for('cancel_booking', booking_id=booking.booking_id) }}">
+
+                                <button type="submit"
+                                        class="cancel-btn">
+
+                                    Cancel Booking
+
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    {% endif %}
+
+
+                    <!-- =================================================
+                         WRITE REVIEW
+                         Customer can review completed bookings
+                         ================================================= -->
+
+                    {% if booking.status == "completed" %}
+
+                        <div class="booking-actions">
+
+                            <a href="{{ url_for('write_review', booking_id=booking.booking_id) }}"
+                               class="review-btn">
+
+                                ⭐ Write Review
+
+                            </a>
+
+                        </div>
+
+                    {% endif %}
+
+                </div>
+
+            {% endfor %}
+
+
+        {% else %}
+
+            <!-- =================================================
+                 NO BOOKINGS
+                 ================================================= -->
+
+            <div class="no-bookings">
+
+                <h2>
+                    📅 No Bookings Yet
+                </h2>
+
+                <p>
+                    You haven't booked any services yet.
+                </p>
+
+                <a href="{{ url_for('browse_services') }}">
+                    Find Services →
+                </a>
+
+            </div>
+
+        {% endif %}
+
+    </main>
+
+</body>
+
+</html>

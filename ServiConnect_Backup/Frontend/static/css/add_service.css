@@ -1,0 +1,397 @@
+/* ==========================================================
+   SERVICONNECT - ADD SERVICE PAGE
+   ========================================================== */
+
+
+/* Remove default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   BODY
+   ========================================================== */
+
+body {
+
+    /* Main font */
+    font-family: Arial, sans-serif;
+
+    /* Page background */
+    background: #f5f8f8;
+
+    /* Default text color */
+    color: #17373c;
+}
+
+
+/* ==========================================================
+   MAIN PAGE
+   ========================================================== */
+
+.add-service-page {
+
+    /* Minimum height of the page */
+    min-height: 100vh;
+
+    /* Space around the page */
+    padding: 30px 60px;
+}
+
+
+/* ==========================================================
+   HEADER
+   ========================================================== */
+
+.page-header {
+
+    /* Put logo and dashboard link on opposite sides */
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    /* Space below header */
+    margin-bottom: 45px;
+}
+
+
+/* ==========================================================
+   LOGO
+   ========================================================== */
+
+.logo {
+
+    /* Logo size */
+    font-size: 28px;
+
+    /* Make logo bold */
+    font-weight: bold;
+}
+
+
+/* Highlight "Servi" */
+.logo span {
+
+    color: #167b78;
+}
+
+
+/* ==========================================================
+   BACK BUTTON
+   ========================================================== */
+
+.back-btn {
+
+    /* Remove underline */
+    text-decoration: none;
+
+    /* Button text color */
+    color: #167b78;
+
+    /* Bold text */
+    font-weight: bold;
+
+    /* Smooth transition */
+    transition: 0.3s;
+}
+
+
+/* Back button hover */
+.back-btn:hover {
+
+    color: #123c42;
+}
+
+
+/* ==========================================================
+   FORM CONTAINER
+   ========================================================== */
+
+.form-container {
+
+    /* Maximum width */
+    max-width: 720px;
+
+    /* Center the form */
+    margin: 0 auto;
+
+    /* White card */
+    background: white;
+
+    /* Rounded corners */
+    border-radius: 20px;
+
+    /* Inner spacing */
+    padding: 40px;
+
+    /* Light border */
+    border: 1px solid #e1eaea;
+
+    /* Soft shadow */
+    box-shadow:
+        0 15px 40px
+        rgba(20, 60, 66, 0.08);
+}
+
+
+/* ==========================================================
+   FORM HEADING
+   ========================================================== */
+
+.form-heading {
+
+    /* Center heading */
+    text-align: center;
+
+    /* Space below heading */
+    margin-bottom: 35px;
+}
+
+
+/* Small heading */
+.small-title {
+
+    /* Main theme color */
+    color: #167b78;
+
+    /* Small text */
+    font-size: 12px;
+
+    /* Letter spacing */
+    letter-spacing: 2px;
+
+    /* Bold */
+    font-weight: bold;
+
+    /* Space below */
+    margin-bottom: 10px;
+}
+
+
+/* Main heading */
+.form-heading h1 {
+
+    /* Heading size */
+    font-size: 32px;
+
+    /* Space below */
+    margin-bottom: 10px;
+}
+
+
+/* Heading description */
+.form-heading p:last-child {
+
+    /* Secondary text color */
+    color: #7a898c;
+
+    /* Font size */
+    font-size: 15px;
+}
+
+
+/* ==========================================================
+   FORM GROUP
+   ========================================================== */
+
+.form-group {
+
+    /* Space between fields */
+    margin-bottom: 22px;
+}
+
+
+/* ==========================================================
+   LABEL
+   ========================================================== */
+
+.form-group label {
+
+    /* Display label on separate line */
+    display: block;
+
+    /* Bold label */
+    font-weight: bold;
+
+    /* Font size */
+    font-size: 14px;
+
+    /* Space below label */
+    margin-bottom: 8px;
+}
+
+
+/* ==========================================================
+   INPUT, SELECT AND TEXTAREA
+   ========================================================== */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    /* Full width */
+    width: 100%;
+
+    /* Inner spacing */
+    padding: 14px 15px;
+
+    /* Border */
+    border: 1px solid #d8e3e3;
+
+    /* Rounded corners */
+    border-radius: 10px;
+
+    /* Font size */
+    font-size: 15px;
+
+    /* Text color */
+    color: #17373c;
+
+    /* White background */
+    background: #ffffff;
+
+    /* Remove default outline */
+    outline: none;
+
+    /* Smooth focus animation */
+    transition: 0.3s;
+}
+
+
+/* ==========================================================
+   INPUT FOCUS
+   ========================================================== */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    /* Highlight border */
+    border-color: #167b78;
+
+    /* Soft focus effect */
+    box-shadow:
+        0 0 0 3px rgba(22, 123, 120, 0.10);
+}
+
+
+/* ==========================================================
+   TEXTAREA
+   ========================================================== */
+
+.form-group textarea {
+
+    /* Allow vertical resizing */
+    resize: vertical;
+
+    /* Minimum height */
+    min-height: 130px;
+}
+
+
+/* ==========================================================
+   SUBMIT BUTTON
+   ========================================================== */
+
+.submit-btn {
+
+    /* Full width */
+    width: 100%;
+
+    /* Remove border */
+    border: none;
+
+    /* Button background */
+    background: #167b78;
+
+    /* Button text */
+    color: white;
+
+    /* Button spacing */
+    padding: 15px;
+
+    /* Rounded corners */
+    border-radius: 10px;
+
+    /* Font size */
+    font-size: 16px;
+
+    /* Bold text */
+    font-weight: bold;
+
+    /* Mouse cursor */
+    cursor: pointer;
+
+    /* Smooth animation */
+    transition: 0.3s;
+
+    /* Space above button */
+    margin-top: 5px;
+}
+
+
+/* ==========================================================
+   BUTTON HOVER
+   ========================================================== */
+
+.submit-btn:hover {
+
+    /* Darker background */
+    background: #123c42;
+
+    /* Slight movement */
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+   ========================================================== */
+
+@media (max-width: 700px) {
+
+    /* Reduce page spacing */
+    .add-service-page {
+
+        padding: 20px;
+    }
+
+
+    /* Reduce form padding */
+    .form-container {
+
+        padding: 25px;
+    }
+
+
+    /* Smaller heading */
+    .form-heading h1 {
+
+        font-size: 27px;
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE SCREEN
+   ========================================================== */
+
+@media (max-width: 450px) {
+
+    /* Stack header items */
+    .page-header {
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        align-items: flex-start;
+    }
+
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive design -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>Edit Service | ServiConnect</title>
+
+    <!-- Edit Service CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/edit_service.css') }}">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         NAVIGATION BAR
+         ===================================================== -->
+
+    <nav class="navbar">
+
+        <!-- Website logo -->
+        <div class="logo">
+            <span>Servi</span>Connect
+        </div>
+
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+
+            <a href="{{ url_for('dashboard') }}">
+                Dashboard
+            </a>
+
+            <a href="{{ url_for('my_services') }}">
+                My Services
+            </a>
+
+            <a href="{{ url_for('add_service') }}">
+                Add Service
+            </a>
+
+            <a href="{{ url_for('logout') }}">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="container">
+
+        <!-- Page heading -->
+        <div class="page-heading">
+
+            <p class="small-heading">
+                SERVICE MANAGEMENT
+            </p>
+
+            <h1>
+                Edit Service
+            </h1>
+
+            <p>
+                Update the details of your service below.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             EDIT FORM CARD
+             ================================================= -->
+
+        <div class="form-card">
+
+            <form method="POST">
+
+
+                <!-- SERVICE NAME -->
+                <div class="form-group">
+
+                    <label for="service_name">
+                        Service Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="service_name"
+                        name="service_name"
+                        value="{{ service.service_name }}"
+                        required>
+
+                </div>
+
+
+                <!-- CATEGORY -->
+                <div class="form-group">
+
+                    <label for="category">
+                        Category
+                    </label>
+
+                    <input
+                        type="text"
+                        id="category"
+                        name="category"
+                        value="{{ service.category }}"
+                        required>
+
+                </div>
+
+
+                <!-- PRICE -->
+                <div class="form-group">
+
+                    <label for="price">
+                        Price
+                    </label>
+
+                    <input
+                        type="number"
+                        id="price"
+                        name="price"
+                        step="0.01"
+                        value="{{ service.price }}"
+                        required>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+                <div class="form-group">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="5"
+                        required>{{ service.description }}</textarea>
+
+                </div>
+
+
+                <!-- AVAILABILITY -->
+                <div class="form-group">
+
+                    <label for="availability">
+                        Availability
+                    </label>
+
+                    <select
+                        id="availability"
+                        name="availability">
+
+                        <option value="Available"
+                            {% if service.availability == "Available" %}
+                            selected
+                            {% endif %}>
+                            Available
+                        </option>
+
+                        <option value="Unavailable"
+                            {% if service.availability == "Unavailable" %}
+                            selected
+                            {% endif %}>
+                            Unavailable
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- =================================================
+                     BUTTONS
+                     ================================================= -->
+
+                <div class="form-actions">
+
+                    <!-- Cancel button -->
+                    <a href="{{ url_for('my_services') }}"
+                       class="cancel-btn">
+
+                        Cancel
+
+                    </a>
+
+
+                    <!-- Save button -->
+                    <button
+                        type="submit"
+                        class="save-btn">
+
+                        Save Changes
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

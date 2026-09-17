@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Tell the browser to use UTF-8 characters -->
+    <meta charset="UTF-8">
+
+    <!-- Make the page responsive on mobile and desktop -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Browser tab title -->
+    <title>Dashboard | ServiConnect</title>
+
+    <!-- Connect dashboard with its CSS file -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         MAIN DASHBOARD
+         ===================================================== -->
+
+    <div class="dashboard">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside class="sidebar">
+
+            <!-- Website logo -->
+            <div class="logo">
+                <span>Servi</span>Connect
+            </div>
+
+
+            <!-- =================================================
+                 NAVIGATION MENU
+                 ================================================= -->
+
+            <nav>
+
+                <!-- Dashboard is common for both users -->
+                <a href="#" class="nav-item active">
+                    🏠
+                    <span>Dashboard</span>
+                </a>
+
+
+                <!-- =================================================
+                     CUSTOMER MENU
+                     This menu appears only when role = customer
+                     ================================================= -->
+
+                {% if user_role == "customer" %}
+
+                    <!-- Find services -->
+                    <!-- Open Find Services page -->
+                <a href="{{ url_for('browse_services') }}"
+                    class="nav-item ">
+
+                    🔍
+
+                <span>
+                     Find Services
+                </span>
+
+                </a>
+
+                    <!-- Customer bookings -->
+                    <a href="{{ url_for('my_bookings') }}" class="nav-item">
+                        📅
+                        <span>My Bookings</span>
+                    </a>
+
+                    <!-- Customer reviews -->
+                    <a href="{{ url_for('my_reviews') }}" class="nav-item">
+                        ⭐
+                        <span>My Reviews</span>
+                    </a>
+
+
+                <!-- =================================================
+                     SERVICE PROVIDER MENU
+                     This menu appears only when role = provider
+                     ================================================= -->
+
+                {% elif user_role == "provider" %}
+
+                    <!-- Provider services -->
+                    <a href="{{ url_for('my_services') }}" class="nav-item">
+                        🛠️
+                    <span>My Services</span>
+                    </a>
+
+                    <!-- Service requests -->
+                     <a href="{{ url_for('provider_bookings') }}" class="nav-item">
+                        📅
+                        <span>Service Requests</span>
+                    </a>
+
+                    <!-- Earnings -->
+                    <a href="{{ url_for('provider_earnings') }}" class="nav-item">
+                        💰
+                        <span>Earnings</span>
+                    </a>
+
+                    <!-- Provider reviews -->
+                    <a href="{{ url_for('provider_reviews') }}" class="nav-item">
+                        ⭐
+                        <span>Reviews</span>
+                    </a>
+
+                {% endif %}
+
+
+                <!-- Profile is common for both roles -->
+                <a href="{{ url_for('profile') }}" class="nav-item">
+                    👤
+                <span>My Profile</span>
+                </a>
+
+            </nav>
+
+
+            <!-- =================================================
+                 LOGOUT
+                 ================================================= -->
+
+            <a href="{{ url_for('logout') }}" class="nav-item">
+                🚪
+            <span>Logout</span>
+            </a>
+
+        </aside>
+
+
+        <!-- =================================================
+             MAIN CONTENT
+             ================================================= -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 TOP BAR
+                 ================================================= -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <!-- Page heading -->
+                    <h1>
+                        Dashboard
+                    </h1>
+
+                    <!-- Dashboard description -->
+                    <p>
+                        Manage your ServiConnect account
+                    </p>
+
+                </div>
+
+
+                <!-- =================================================
+                     LOGGED-IN USER INFORMATION
+                     ================================================= -->
+
+                <div class="user-info">
+
+                    <!-- Show first letter of user's name -->
+                    <div class="avatar">
+
+                        {{ user_name[0] | upper }}
+
+                    </div>
+
+
+                    <div>
+
+                        <!-- Display user's name -->
+                        <strong>
+                            {{ user_name }}
+                        </strong>
+
+                        <!-- Display user's role -->
+                        <small>
+                            {{ user_role | title }}
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 WELCOME CARD
+                 ================================================= -->
+
+            <section class="welcome-card">
+
+                <div>
+
+                    <!-- Small welcome message -->
+                    <p class="welcome-small">
+                        Welcome back 👋
+                    </p>
+
+
+                    <!-- Dynamic user name -->
+                    <h2>
+                        Hello, {{ user_name }}!
+                    </h2>
+
+
+                    <!-- Different message according to role -->
+
+                    {% if user_role == "customer" %}
+
+                        <p>
+                            Find trusted professionals for your
+                            everyday service needs.
+                        </p>
+
+                    {% elif user_role == "provider" %}
+
+                        <p>
+                            Manage your services and connect with
+                            customers who need your expertise.
+                        </p>
+
+                    {% endif %}
+
+                </div>
+
+
+                <!-- Decorative icon -->
+                <div class="welcome-icon">
+                    ✨
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CUSTOMER QUICK ACTIONS
+                 ================================================= -->
+
+            {% if user_role == "customer" %}
+
+                <h2 class="section-title">
+                    Quick Actions
+                </h2>
+
+
+                <section class="cards">
+
+
+                    <!-- Find Services -->
+                    <div class="action-card">
+
+                        <div class="card-icon">
+                            🔍
+                        </div>
+
+                        <h3>
+                            Find Services
+                        </h3>
+
+                        <p>
+                            Discover trusted professionals
+                            for your needs.
+                        </p>
+
+                        <!-- Button that opens the services page -->
+                        <a href="{{ url_for('browse_services') }}">
+                        Explore Services →
+                        </a>
+
+                    </div>
+
+
+                    <!-- My Bookings -->
+                    <div class="action-card">
+
+                        <div class="card-icon">
+                            📅
+                        </div>
+
+                        <h3>
+                            My Bookings
+                        </h3>
+
+                        <p>
+                            View and manage your upcoming
+                            service bookings.
+                        </p>
+
+                        <a href="{{ url_for('my_bookings') }}">
+                            View Bookings →
+                        </a>
+
+                    </div>
+
+
+                    <!-- Reviews -->
+                    <div class="action-card">
+
+                        <div class="card-icon">
+                            ⭐
+                        </div>
+
+                        <h3>
+                            My Reviews
+                        </h3>
+
+                        <p>
+                            View the reviews and ratings
+                            you have given.
+                        </p>
+
+                        <a href="{{ url_for('my_reviews') }}">
+                            View Reviews →
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+            <!-- =================================================
+                 SERVICE PROVIDER QUICK ACTIONS
+                 ================================================= -->
+
+            {% elif user_role == "provider" %}
+
+                <h2 class="section-title">
+                    Quick Actions
+                </h2>
+
+
+                <section class="cards">
+
+
+                    <!-- My Services -->
+                    <div class="action-card">
+
+                        <div class="card-icon">
+                            🛠️
+                        </div>
+
+                        <h3>
+                            My Services
+                        </h3>
+
+                        <p>
+                            Add, edit and manage the services
+                            you provide.
+                        </p>
+
+                        <a href="{{ url_for('my_services') }}">
+                        Manage Services →
+                        </a>
+
+                    </div>
+
+
+                    <!-- Service Requests -->
+                    <div class="action-card">
+
+                        <div class="card-icon">
+                            📅
+                        </div>
+
+                        <h3>
+                            Service Requests
+                        </h3>
+
+                        <p>
+                            View and manage requests from
+                            customers.
+                        </p>
+
+                        <a href="{{ url_for('provider_bookings') }}">
+                        View Requests →
+                        </a>
+
+                    </div>
+
+
+                    <!-- Earnings -->
+                    <div class="action-card">
+
+                        <div class="card-icon">
+                            💰
+                        </div>
+
+                        <h3>
+                            Earnings
+                        </h3>
+
+                        <p>
+                            Track your service earnings
+                            and payments.
+                        </p>
+
+                        <a href="{{ url_for('provider_earnings') }}">
+                        View Earnings →
+                        </a>
+
+                    </div>
+    
+    <!-- Reviews -->
+<div class="action-card">
+
+    <div class="card-icon">
+        ⭐
+    </div>
+
+    <h3>
+        Reviews
+    </h3>
+
+    <p>
+        View ratings and feedback
+        from your customers.
+    </p>
+
+    <a href="{{ url_for('provider_reviews') }}">
+        View Reviews →
+    </a>
+
+</div>
+
+                </section>
+
+            {% endif %}
+
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

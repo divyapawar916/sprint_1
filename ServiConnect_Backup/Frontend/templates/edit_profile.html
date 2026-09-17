@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Profile - ServiConnect</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/edit_profile.css') }}">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         PAGE HEADER
+         ===================================================== -->
+
+    <header class="page-header">
+
+        <div>
+
+            <h1>
+                Edit Profile
+            </h1>
+
+            <p>
+                Update your personal information.
+            </p>
+
+        </div>
+
+        <a href="{{ url_for('profile') }}"
+           class="back-btn">
+
+            ← My Profile
+
+        </a>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         EDIT PROFILE FORM
+         ===================================================== -->
+
+    <main class="edit-container">
+
+        <div class="edit-card">
+
+            <div class="form-icon">
+                👤
+            </div>
+
+            <h2>
+                Personal Information
+            </h2>
+
+            <p class="form-description">
+                Keep your account information up to date.
+            </p>
+
+
+            <form method="POST">
+
+
+                <!-- Full Name -->
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value="{{ user.name }}"
+                        required>
+
+                </div>
+
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value="{{ user.email }}"
+                        required>
+
+                </div>
+
+
+
+                <!-- Phone -->
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="text"
+                        id="phone"
+                        name="phone"
+                        value="{{ user.phone or '' }}"
+                        placeholder="Enter your phone number">
+
+                </div>
+
+
+
+                <!-- Account Role -->
+
+                <div class="form-group">
+
+                    <label>
+                        Account Type
+                    </label>
+
+                    <input
+                        type="text"
+                        value="{{ user.role|capitalize }}"
+                        disabled>
+
+                    <small>
+                        Account type cannot be changed.
+                    </small>
+
+                </div>
+
+
+
+                <!-- Buttons -->
+
+                <div class="form-actions">
+
+                    <a href="{{ url_for('profile') }}"
+                       class="cancel-btn">
+
+                        Cancel
+
+                    </a>
+
+
+                    <button type="submit"
+                            class="save-btn">
+
+                        💾 Save Changes
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>

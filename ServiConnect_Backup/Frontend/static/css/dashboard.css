@@ -1,0 +1,458 @@
+/* ==========================================================
+   SERVICONNECT DASHBOARD
+   ========================================================== */
+
+
+/* Remove default spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Main page */
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #f5f8f8;
+
+    color: #17373c;
+}
+
+
+/* ==========================================================
+   DASHBOARD LAYOUT
+   ========================================================== */
+
+.dashboard {
+
+    display: flex;
+
+    min-height: 100vh;
+}
+
+
+/* ==========================================================
+   SIDEBAR
+   ========================================================== */
+
+.sidebar {
+
+    width: 250px;
+
+    background: #123c42;
+
+    color: white;
+
+    padding: 30px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* Logo */
+.logo {
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    margin-bottom: 50px;
+
+    padding-left: 10px;
+}
+
+
+/* Highlight Servi */
+.logo span {
+
+    color: #75d1c5;
+}
+
+
+/* Navigation */
+nav {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* Navigation links */
+.nav-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 14px;
+
+    color: #dcebea;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+
+/* Hover effect */
+.nav-item:hover {
+
+    background: #1f6266;
+}
+
+
+/* Active page */
+.nav-item.active {
+
+    background: #75d1c5;
+
+    color: #123c42;
+
+    font-weight: bold;
+}
+
+
+/* Logout */
+.logout {
+
+    margin-top: auto;
+
+    display: flex;
+
+    gap: 14px;
+
+    padding: 14px;
+
+    color: #dcebea;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+}
+
+
+/* ==========================================================
+   MAIN CONTENT
+   ========================================================== */
+
+.main-content {
+
+    flex: 1;
+
+    padding: 35px 45px;
+
+}
+
+
+/* ==========================================================
+   TOP BAR
+   ========================================================== */
+
+.topbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+
+.topbar h1 {
+
+    font-size: 32px;
+
+    margin-bottom: 6px;
+}
+
+
+.topbar p {
+
+    color: #7a898c;
+
+    font-size: 14px;
+}
+
+
+/* ==========================================================
+   USER INFO
+   ========================================================== */
+
+.user-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.avatar {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #75d1c5;
+
+    color: #123c42;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+
+    font-size: 18px;
+}
+
+
+.user-info strong {
+
+    display: block;
+
+    margin-bottom: 4px;
+}
+
+
+.user-info small {
+
+    color: #7a898c;
+}
+
+
+/* ==========================================================
+   WELCOME CARD
+   ========================================================== */
+
+.welcome-card {
+
+    background: linear-gradient(
+        135deg,
+        #1f6266,
+        #167b78
+    );
+
+    color: white;
+
+    border-radius: 18px;
+
+    padding: 35px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+
+.welcome-small {
+
+    opacity: 0.8;
+
+    margin-bottom: 8px;
+}
+
+
+.welcome-card h2 {
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+
+.welcome-card p {
+
+    opacity: 0.85;
+}
+
+
+.welcome-icon {
+
+    font-size: 70px;
+
+    opacity: 0.8;
+}
+
+
+/* ==========================================================
+   SECTION TITLE
+   ========================================================== */
+
+.section-title {
+
+    font-size: 22px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ==========================================================
+   ACTION CARDS
+   ========================================================== */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+.action-card {
+
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 15px;
+
+    border: 1px solid #e3eaea;
+
+    transition: 0.3s;
+}
+
+
+/* Card hover */
+.action-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(20, 60, 66, 0.10);
+}
+
+
+/* Card icon */
+.card-icon {
+
+    font-size: 30px;
+
+    margin-bottom: 18px;
+}
+
+
+.action-card h3 {
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
+}
+
+
+.action-card p {
+
+    color: #7a898c;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+
+/* Card button */
+.action-card button {
+
+    border: none;
+
+    background: none;
+
+    color: #167b78;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+
+        width: 200px;
+    }
+
+    .main-content {
+
+        padding: 25px;
+    }
+
+    .cards {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .dashboard {
+
+        flex-direction: column;
+    }
+
+    .sidebar {
+
+        width: 100%;
+
+        padding: 20px;
+    }
+
+    nav {
+
+        flex-direction: row;
+
+        overflow-x: auto;
+    }
+
+    .logout {
+
+        margin-top: 20px;
+    }
+
+    .topbar {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+}

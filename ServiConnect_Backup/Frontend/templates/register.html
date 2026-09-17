@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Makes the page responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Browser tab title -->
+    <title>Create Account | ServiConnect</title>
+
+    <!-- Connect this page to register.css -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/register.css') }}">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         MAIN REGISTRATION PAGE
+         ===================================================== -->
+
+    <div class="register-page">
+
+
+        <!-- =================================================
+             LEFT SIDE
+             ================================================= -->
+
+        <div class="register-info">
+
+            <!-- ServiConnect logo -->
+            <div class="logo">
+                <span>Servi</span>Connect
+            </div>
+
+
+            <!-- Main heading -->
+            <h1>
+                Local services,<br>
+                made simple.
+            </h1>
+
+
+            <!-- Description -->
+            <p>
+                Create your account and connect with trusted
+                professionals for all your everyday service needs.
+            </p>
+
+
+            <!-- Feature 1 -->
+            <div class="feature">
+
+                <div class="feature-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <h3>
+                        Trusted Professionals
+                    </h3>
+
+                    <p>
+                        Find verified local service providers.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Feature 2 -->
+            <div class="feature">
+
+                <div class="feature-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <h3>
+                        Easy Booking
+                    </h3>
+
+                    <p>
+                        Book services in just a few clicks.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Feature 3 -->
+            <div class="feature">
+
+                <div class="feature-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <h3>
+                        Secure & Reliable
+                    </h3>
+
+                    <p>
+                        Your account information stays protected.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             RIGHT SIDE - REGISTRATION FORM
+             ================================================= -->
+
+        <div class="register-card">
+
+
+            <!-- Registration heading -->
+            <h2>
+                Create your account
+            </h2>
+
+
+            <!-- Subtitle -->
+            <p class="form-subtitle">
+                Join ServiConnect today
+            </p>
+
+
+            <!-- Login link -->
+           
+
+
+            <!-- =================================================
+                 REGISTRATION FORM
+                 ================================================= -->
+
+            <form action="/register" method="POST">
+
+
+                <!-- FULL NAME -->
+                <div class="form-group">
+
+                    <label for="full_name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="full_name"
+                        name="full_name"
+                        placeholder="Enter your full name"
+                        required>
+
+                </div>
+
+
+                <!-- EMAIL -->
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="example@email.com"
+                        required>
+
+                </div>
+
+
+                <!-- PHONE NUMBER -->
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                <input
+                     type="tel"
+                     name="phone"
+                     id="phone"
+                     placeholder="Enter 10-digit contact number"
+                     pattern="[0-9]{10}"
+                     maxlength="10"
+                     minlength="10"
+                     inputmode="numeric"
+                     required>
+
+                </div>
+
+
+                <!-- ACCOUNT TYPE -->
+                <div class="form-group">
+
+                    <label for="account_type">
+                        Account Type
+                    </label>
+
+                    <select
+                        id="account_type"
+                        name="account_type"
+                        required>
+
+                        <option value="customer">
+                            Customer
+                        </option>
+
+                        <option value="provider">
+                            Service Provider
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create a password"
+                        minlength="6"
+                        required>
+
+                </div>
+
+
+                <!-- TERMS AND CONDITIONS -->
+                <div class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        required>
+
+                    <label for="terms">
+
+                        I agree to the
+
+                        <a href="{{ url_for('terms') }}">
+                            Terms & Conditions
+                        </a>
+
+                    </label>
+
+                </div>
+
+
+                <!-- CREATE ACCOUNT BUTTON -->
+                <button
+                    type="submit"
+                    class="register-btn">
+
+                    Create Account →
+
+                </button>
+
+            </form>
+
+
+            <!-- Bottom login link -->
+            <p class="login-text">
+                Already have an account?
+            <a href="{{ url_for('login') }}" class="login-link">
+                Login here
+            </a>
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

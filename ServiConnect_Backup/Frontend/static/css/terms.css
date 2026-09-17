@@ -1,0 +1,159 @@
+/* ============================================================
+   SERVICONNECT - TERMS & CONDITIONS
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f8f8;
+    color: #163b42;
+    min-height: 100vh;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 24px 45px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e1e9e9;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.page-header h1 {
+    color: #123c43;
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+.page-header p {
+    color: #718287;
+    font-size: 15px;
+}
+
+/* ============================================================
+   BACK BUTTON
+   ============================================================ */
+
+.back-btn {
+    text-decoration: none;
+
+    padding: 11px 20px;
+
+    border-radius: 8px;
+
+    background: #087f7b;
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.back-btn:hover {
+    background: #066864;
+}
+
+/* ============================================================
+   TERMS CONTAINER
+   ============================================================ */
+
+.terms-container {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 45px 25px;
+}
+
+/* ============================================================
+   TERMS CARD
+   ============================================================ */
+
+.terms-card {
+    background: #ffffff;
+
+    padding: 40px;
+
+    border: 1px solid #e0e9e9;
+
+    border-radius: 18px;
+
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.07);
+}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+
+.terms-card section {
+    margin-bottom: 30px;
+}
+
+.terms-card section:last-child {
+    margin-bottom: 0;
+}
+
+.terms-card h2 {
+    color: #123c43;
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
+}
+
+.terms-card p {
+    color: #627477;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+    .page-header {
+        padding: 20px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .terms-container {
+        padding: 25px 15px;
+    }
+
+    .terms-card {
+        padding: 25px 20px;
+    }
+
+    .terms-card h2 {
+        font-size: 17px;
+    }
+
+    .terms-card p {
+        font-size: 14px;
+    }
+
+}

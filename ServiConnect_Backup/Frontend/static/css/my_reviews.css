@@ -1,0 +1,336 @@
+/* ============================================================
+   SERVICONNECT - CUSTOMER MY REVIEWS
+   ============================================================ */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ============================================================
+   PAGE
+   ============================================================ */
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: #f4f8f8;
+
+    color: #163b42;
+
+    min-height: 100vh;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.page-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 24px 45px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e1e9e9;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+.page-header h1 {
+    color: #123c43;
+
+    font-size: 30px;
+
+    margin-bottom: 6px;
+}
+
+
+.page-header p {
+    color: #718287;
+
+    font-size: 15px;
+}
+
+
+/* ============================================================
+   DASHBOARD BUTTON
+   ============================================================ */
+
+.back-btn {
+    text-decoration: none;
+
+    padding: 11px 20px;
+
+    border-radius: 8px;
+
+    background: #087f7b;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+
+.back-btn:hover {
+    background: #066864;
+}
+
+
+/* ============================================================
+   REVIEWS CONTAINER
+   ============================================================ */
+
+.reviews-container {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 40px 25px;
+}
+
+
+/* ============================================================
+   REVIEW CARD
+   ============================================================ */
+
+.review-card {
+    background: #ffffff;
+
+    padding: 28px;
+
+    margin-bottom: 22px;
+
+    border-radius: 16px;
+
+    border: 1px solid #e0e9e9;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+
+    transition: 0.2s ease;
+}
+
+
+.review-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.09);
+}
+
+
+/* ============================================================
+   REVIEW HEADER
+   ============================================================ */
+
+.review-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid #edf1f1;
+}
+
+
+.review-header h2 {
+    color: #123c43;
+
+    font-size: 22px;
+
+    margin-bottom: 7px;
+}
+
+
+/* Provider name */
+.provider-name {
+    color: #718287;
+
+    font-size: 14px;
+}
+
+
+/* ============================================================
+   RATING
+   ============================================================ */
+
+.rating {
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    background: #fff4d6;
+
+    color: #9a6b00;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   REVIEW COMMENT
+   ============================================================ */
+
+.review-comment {
+    padding: 22px 0 15px;
+}
+
+
+.review-comment p {
+    color: #53696e;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    font-style: italic;
+}
+
+
+/* ============================================================
+   REVIEW DATE
+   ============================================================ */
+
+.review-date {
+    color: #8a999d;
+
+    font-size: 13px;
+
+    padding-top: 10px;
+}
+
+
+/* ============================================================
+   NO REVIEWS
+   ============================================================ */
+
+.no-reviews {
+    text-align: center;
+
+    background: #ffffff;
+
+    padding: 65px 30px;
+
+    border-radius: 16px;
+
+    border: 1px solid #e0e9e9;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+
+.empty-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+
+.no-reviews h2 {
+    color: #123c43;
+
+    margin-bottom: 10px;
+
+    font-size: 24px;
+}
+
+
+.no-reviews p {
+    color: #718287;
+
+    font-size: 15px;
+
+    margin-bottom: 22px;
+}
+
+
+/* ============================================================
+   VIEW BOOKINGS BUTTON
+   ============================================================ */
+
+.no-reviews a {
+    display: inline-block;
+
+    text-decoration: none;
+
+    padding: 11px 22px;
+
+    border-radius: 8px;
+
+    background: #087f7b;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+
+.no-reviews a:hover {
+    background: #066864;
+}
+
+
+/* ============================================================
+   MOBILE RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+    .page-header {
+        padding: 20px;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+        flex-direction: column;
+    }
+
+
+    .reviews-container {
+        padding: 25px 15px;
+    }
+
+
+    .review-card {
+        padding: 22px;
+    }
+
+
+    .review-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .rating {
+        align-self: flex-start;
+    }
+
+}

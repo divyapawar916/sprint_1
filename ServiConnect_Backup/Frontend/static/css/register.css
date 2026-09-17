@@ -1,0 +1,596 @@
+/* ==========================================================
+   SERVICONNECT REGISTRATION PAGE
+   ========================================================== */
+
+
+/* ==========================================================
+   GLOBAL RESET
+   ========================================================== */
+
+/* Remove default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+
+    /* Make width and height calculations easier */
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   BODY
+   ========================================================== */
+
+body {
+
+    /* Modern clean font */
+    font-family: Arial, sans-serif;
+
+    /* Light background */
+    background: #f4f7f8;
+
+    /* Main text color */
+    color: #172a2f;
+
+}
+
+
+/* ==========================================================
+   MAIN REGISTRATION CONTAINER
+   ========================================================== */
+
+.register-page {
+
+    /* Put left and right sections next to each other */
+    display: flex;
+
+    /* Use full screen height */
+    min-height: 100vh;
+
+}
+
+
+/* ==========================================================
+   LEFT INFORMATION SECTION
+   ========================================================== */
+
+.register-info {
+
+    /* Left section takes 50% width */
+    width: 50%;
+
+    /* Elegant dark teal background */
+    background: linear-gradient(
+        135deg,
+        #123c42,
+        #1f6266
+    );
+
+    /* White text */
+    color: white;
+
+    /* Inner spacing */
+    padding: 70px;
+
+    /* Center content vertically */
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+/* ==========================================================
+   LOGO
+   ========================================================== */
+
+.logo {
+
+    /* Logo size */
+    font-size: 32px;
+
+    /* Bold logo */
+    font-weight: 700;
+
+    /* Space below logo */
+    margin-bottom: 60px;
+
+}
+
+
+/* Highlight "Servi" */
+.logo span {
+
+    /* Light teal color */
+    color: #75d1c5;
+
+}
+
+
+/* ==========================================================
+   LEFT HEADING
+   ========================================================== */
+
+.register-info h1 {
+
+    /* Large heading */
+    font-size: 48px;
+
+    /* Line spacing */
+    line-height: 1.15;
+
+    /* Space below */
+    margin-bottom: 25px;
+
+}
+
+
+/* ==========================================================
+   LEFT DESCRIPTION
+   ========================================================== */
+
+.register-info > p {
+
+    /* Text size */
+    font-size: 17px;
+
+    /* Comfortable line spacing */
+    line-height: 1.7;
+
+    /* Slight transparency */
+    opacity: 0.85;
+
+    /* Limit text width */
+    max-width: 520px;
+
+    /* Space below */
+    margin-bottom: 40px;
+
+}
+
+
+/* ==========================================================
+   FEATURES
+   ========================================================== */
+
+.feature {
+
+    /* Place icon and text horizontally */
+    display: flex;
+
+    /* Space between icon and text */
+    gap: 18px;
+
+    /* Space between features */
+    margin-bottom: 28px;
+
+}
+
+
+/* Feature circle */
+.feature-icon {
+
+    /* Circle width */
+    width: 35px;
+
+    /* Circle height */
+    height: 35px;
+
+    /* Make it circular */
+    border-radius: 50%;
+
+    /* Light teal background */
+    background: #75d1c5;
+
+    /* Dark icon */
+    color: #123c42;
+
+    /* Center check mark */
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    /* Bold check mark */
+    font-weight: bold;
+
+}
+
+
+/* Feature heading */
+.feature h3 {
+
+    /* Heading size */
+    font-size: 17px;
+
+    /* Space below heading */
+    margin-bottom: 7px;
+
+}
+
+
+/* Feature description */
+.feature p {
+
+    /* Description size */
+    font-size: 14px;
+
+    /* Slight transparency */
+    opacity: 0.75;
+
+}
+
+
+/* ==========================================================
+   RIGHT REGISTRATION CARD
+   ========================================================== */
+
+.register-card {
+
+    /* Right section takes remaining 50% */
+    width: 50%;
+
+    /* White background */
+    background: white;
+
+    /* Center content vertically */
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    /* Horizontal and vertical spacing */
+    padding: 60px 90px;
+
+}
+
+
+/* ==========================================================
+   FORM HEADING
+   ========================================================== */
+
+.register-card h2 {
+
+    /* Heading size */
+    font-size: 34px;
+
+    /* Dark heading color */
+    color: #17373c;
+
+    /* Space below */
+    margin-bottom: 10px;
+
+}
+
+
+/* Subtitle */
+.form-subtitle {
+
+    /* Gray text */
+    color: #7a898c;
+
+    /* Font size */
+    font-size: 15px;
+
+    /* Space below */
+    margin-bottom: 20px;
+
+}
+
+
+/* ==========================================================
+   LOGIN TEXT
+   ========================================================== */
+
+.login-text {
+
+    /* Gray text */
+    color: #6f7d80;
+
+    /* Space below */
+    margin-bottom: 30px;
+
+}
+
+
+/* Login links */
+.login-text a,
+.bottom-login a {
+
+    /* Teal link */
+    color: #167b78;
+
+    /* Bold */
+    font-weight: 600;
+
+    /* Remove underline */
+    text-decoration: none;
+
+}
+
+
+/* Link hover */
+.login-text a:hover,
+.bottom-login a:hover {
+
+    /* Show underline on hover */
+    text-decoration: underline;
+
+}
+
+
+/* ==========================================================
+   FORM GROUP
+   ========================================================== */
+
+.form-group {
+
+    /* Space between fields */
+    margin-bottom: 18px;
+
+}
+
+
+/* Form labels */
+.form-group label {
+
+    /* Put label on separate line */
+    display: block;
+
+    /* Label size */
+    font-size: 14px;
+
+    /* Make label bold */
+    font-weight: 600;
+
+    /* Label color */
+    color: #344b4f;
+
+    /* Space below label */
+    margin-bottom: 7px;
+
+}
+
+
+/* ==========================================================
+   INPUTS AND SELECT
+   ========================================================== */
+
+.form-group input,
+.form-group select {
+
+    /* Full available width */
+    width: 100%;
+
+    /* Input height */
+    height: 48px;
+
+    /* Light border */
+    border: 1px solid #d6e0e1;
+
+    /* Rounded corners */
+    border-radius: 9px;
+
+    /* Inner spacing */
+    padding: 0 15px;
+
+    /* Text size */
+    font-size: 14px;
+
+    /* Light background */
+    background: #fbfcfc;
+
+    /* Smooth focus animation */
+    transition: 0.3s;
+
+}
+
+
+/* ==========================================================
+   INPUT FOCUS
+   ========================================================== */
+
+.form-group input:focus,
+.form-group select:focus {
+
+    /* Remove default outline */
+    outline: none;
+
+    /* Teal border */
+    border-color: #1f8a87;
+
+    /* Soft teal glow */
+    box-shadow:
+        0 0 0 3px
+        rgba(31, 138, 135, 0.12);
+
+}
+
+
+/* ==========================================================
+   TERMS AND CONDITIONS
+   ========================================================== */
+
+.terms {
+
+    /* Put checkbox and text on one line */
+    display: flex;
+
+    align-items: center;
+
+    /* Space between checkbox and text */
+    gap: 8px;
+
+    /* Text size */
+    font-size: 13px;
+
+    /* Spacing */
+    margin: 15px 0 22px;
+
+}
+
+
+/* Terms link */
+.terms a {
+
+    /* Teal link */
+    color: #167b78;
+
+    /* Remove underline */
+    text-decoration: none;
+
+}
+
+
+/* ==========================================================
+   REGISTER BUTTON
+   ========================================================== */
+
+.register-btn {
+
+    /* Full width */
+    width: 100%;
+
+    /* Button height */
+    height: 50px;
+
+    /* Remove border */
+    border: none;
+
+    /* Rounded corners */
+    border-radius: 9px;
+
+    /* Teal background */
+    background: #167b78;
+
+    /* White text */
+    color: white;
+
+    /* Text size */
+    font-size: 15px;
+
+    /* Bold text */
+    font-weight: 600;
+
+    /* Pointer cursor */
+    cursor: pointer;
+
+    /* Smooth animation */
+    transition: 0.3s;
+
+}
+
+
+/* Button hover effect */
+.register-btn:hover {
+
+    /* Darker teal */
+    background: #105f5d;
+
+    /* Move slightly upward */
+    transform: translateY(-2px);
+
+    /* Add shadow */
+    box-shadow:
+        0 8px 20px
+        rgba(22, 123, 120, 0.25);
+
+}
+
+
+/* ==========================================================
+   BOTTOM LOGIN
+   ========================================================== */
+
+.bottom-login {
+
+    /* Center the text */
+    text-align: center;
+
+    /* Space above */
+    margin-top: 25px;
+
+    /* Text color */
+    color: #7a898c;
+
+    /* Text size */
+    font-size: 14px;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+   ========================================================== */
+
+/* Apply these styles on smaller screens */
+@media (max-width: 900px) {
+
+    /* Stack the two sections */
+    .register-page {
+
+        flex-direction: column;
+
+    }
+
+
+    /* Make both sections full width */
+    .register-info,
+    .register-card {
+
+        width: 100%;
+
+    }
+
+
+    /* Adjust left section spacing */
+    .register-info {
+
+        padding: 50px 30px;
+
+    }
+
+
+    /* Smaller heading */
+    .register-info h1 {
+
+        font-size: 38px;
+
+    }
+
+
+    /* Adjust form spacing */
+    .register-card {
+
+        padding: 50px 30px;
+
+    }
+
+}
+/* ============================================================
+   LOGIN HERE
+   ============================================================ */
+
+.login-text {
+    text-align: center;
+    margin-top: 22px;
+    color: #718287;
+    font-size: 15px;
+}
+
+.login-link {
+    color: #087f7b;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 4px;
+    transition: 0.2s ease;
+}
+
+.login-link:hover {
+    color: #066864;
+    text-decoration: underline;
+}

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive design -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>Find Services | ServiConnect</title>
+
+    <!-- Services page CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/services.css') }}">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         MAIN PAGE
+         ===================================================== -->
+
+    <div class="services-page">
+
+
+        <!-- =================================================
+             HEADER
+             ================================================= -->
+
+        <header class="services-header">
+
+            <!-- Logo -->
+            <div class="logo">
+                <span>Servi</span>Connect
+            </div>
+
+
+            <!-- Back to dashboard -->
+            <a href="{{ url_for('dashboard') }}"
+               class="back-btn">
+
+                ← Dashboard
+
+            </a>
+
+        </header>
+
+
+        <!-- =================================================
+             PAGE INTRODUCTION
+             ================================================= -->
+
+        <section class="page-intro">
+
+            <p class="small-title">
+                SERVICONNECT SERVICES
+            </p>
+
+            <h1>
+                Find the right service for you
+            </h1>
+
+            <p>
+                Discover trusted professionals for your
+                everyday needs.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             SEARCH BAR
+             ================================================= -->
+
+        <div class="search-box">
+
+            <!-- Search icon -->
+            <span>
+                🔍
+            </span>
+
+            <!-- Search input -->
+            <input
+                type="text"
+                placeholder="Search for a service...">
+
+        </div>
+
+
+        <!-- =================================================
+             SERVICE CATEGORIES
+             ================================================= -->
+
+        <h2>
+            Popular Services
+        </h2>
+
+
+        <section class="service-grid">
+
+
+            <!-- Home Cleaning -->
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🧹
+                </div>
+
+                <h3>
+                    Home Cleaning
+                </h3>
+
+                <p>
+                    Professional cleaning services
+                    for your home.
+                </p>
+
+                <button>
+                    View Services →
+                </button>
+
+            </div>
+
+
+            <!-- Plumbing -->
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🔧
+                </div>
+
+                <h3>
+                    Plumbing
+                </h3>
+
+                <p>
+                    Find reliable plumbers for
+                    repairs and installations.
+                </p>
+
+                <button>
+                    View Services →
+                </button>
+
+            </div>
+
+
+            <!-- Electrical -->
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Electrical
+                </h3>
+
+                <p>
+                    Professional electricians for
+                    your electrical needs.
+                </p>
+
+                <button>
+                    View Services →
+                </button>
+
+            </div>
+
+
+            <!-- Beauty -->
+            <div class="service-card">
+
+                <div class="service-icon">
+                    💇
+                </div>
+
+                <h3>
+                    Beauty & Salon
+                </h3>
+
+                <p>
+                    Beauty professionals available
+                    at your convenience.
+                </p>
+
+                <button>
+                    View Services →
+                </button>
+
+            </div>
+
+
+            <!-- Appliance Repair -->
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🔨
+                </div>
+
+                <h3>
+                    Appliance Repair
+                </h3>
+
+                <p>
+                    Get help repairing your
+                    household appliances.
+                </p>
+
+                <button>
+                    View Services →
+                </button>
+
+            </div>
+
+
+            <!-- Painting -->
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🎨
+                </div>
+
+                <h3>
+                    Painting
+                </h3>
+
+                <p>
+                    Professional painting services
+                    for your home.
+                </p>
+
+                <button>
+                    View Services →
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+
+</html>

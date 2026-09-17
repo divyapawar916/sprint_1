@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Tell the browser that we are using UTF-8 characters -->
+    <meta charset="UTF-8">
+
+    <!-- Make the page responsive on mobile and desktop -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Text shown on the browser tab -->
+    <title>Login | ServiConnect</title>
+
+    <!-- Connect our login page with the CSS file -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/login.css') }}">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         MAIN LOGIN CONTAINER
+         ===================================================== -->
+
+    <div class="login-page">
+
+
+        <!-- =================================================
+             LEFT SIDE
+             ================================================= -->
+
+        <div class="login-info">
+
+            <!-- ServiConnect logo -->
+            <div class="logo">
+                <span>Servi</span>Connect
+            </div>
+
+
+            <!-- Main heading -->
+            <h1>
+                Welcome<br>
+                back.
+            </h1>
+
+
+            <!-- Description -->
+            <p>
+                Login to your ServiConnect account and
+                manage your services easily.
+            </p>
+
+
+            <!-- Feature 1 -->
+            <div class="feature">
+
+                <!-- Check icon -->
+                <div class="feature-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <h3>
+                        Trusted Professionals
+                    </h3>
+
+                    <p>
+                        Connect with reliable local professionals.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Feature 2 -->
+            <div class="feature">
+
+                <!-- Check icon -->
+                <div class="feature-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <h3>
+                        Easy Service Management
+                    </h3>
+
+                    <p>
+                        Manage your bookings and services easily.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Feature 3 -->
+            <div class="feature">
+
+                <!-- Check icon -->
+                <div class="feature-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <h3>
+                        Secure Account
+                    </h3>
+
+                    <p>
+                        Your account information is protected.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             RIGHT SIDE - LOGIN FORM
+             ================================================= -->
+
+        <div class="login-card">
+
+
+            <!-- Login heading -->
+            <h2>
+                Welcome back
+            </h2>
+
+
+            <!-- Subtitle -->
+            <p class="form-subtitle">
+                Login to continue to ServiConnect
+            </p>
+
+
+            <!-- Registration link -->
+            <p class="register-text">
+
+                Don't have an account?
+
+                <!-- Go to registration page -->
+                <a href="{{ url_for('register') }}">
+                    Create Account
+                </a>
+
+            </p>
+
+
+            <!-- =================================================
+                 LOGIN FORM
+                 ================================================= -->
+
+            <form action="/login" method="POST">
+
+
+                <!-- =================================================
+                     EMAIL
+                     ================================================= -->
+
+                <div class="form-group">
+
+                    <!-- Email label -->
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <!-- Email input -->
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required>
+
+                </div>
+
+
+                <!-- =================================================
+                     PASSWORD
+                     ================================================= -->
+
+                <div class="form-group">
+
+                    <!-- Password label -->
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <!-- Password input -->
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required>
+
+                </div>
+
+
+                <!-- Forgot password link -->
+                <div class="forgot-password">
+
+                <a href="{{ url_for('forgot_password') }}">
+                    Forgot Password?
+                </a>
+
+            </div>
+
+                <!-- =================================================
+                     LOGIN BUTTON
+                     ================================================= -->
+
+                <button
+                    type="submit"
+                    class="login-btn">
+
+                    Login →
+
+                </button>
+
+
+            </form>
+
+
+            <!-- Bottom registration link -->
+            <p class="bottom-register">
+
+                Don't have an account?
+
+                <a href="{{ url_for('register') }}">
+                    Register here
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

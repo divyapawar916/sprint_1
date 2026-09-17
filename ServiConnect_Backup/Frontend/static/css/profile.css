@@ -1,0 +1,238 @@
+/* ============================================================
+   SERVICONNECT - MY PROFILE
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f8f8;
+    color: #163b42;
+    min-height: 100vh;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 45px;
+    background: #ffffff;
+    border-bottom: 1px solid #e1e9e9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.page-header h1 {
+    color: #123c43;
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+.page-header p {
+    color: #718287;
+    font-size: 15px;
+}
+
+/* ============================================================
+   BACK BUTTON
+   ============================================================ */
+
+.back-btn {
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 8px;
+    background: #087f7b;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.back-btn:hover {
+    background: #066864;
+}
+
+/* ============================================================
+   PROFILE CONTAINER
+   ============================================================ */
+
+.profile-container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 45px 25px;
+}
+
+/* ============================================================
+   PROFILE CARD
+   ============================================================ */
+
+.profile-card {
+    background: #ffffff;
+    border: 1px solid #e0e9e9;
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.07);
+}
+
+/* ============================================================
+   PROFILE TOP
+   ============================================================ */
+
+.profile-top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 28px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #edf1f1;
+}
+
+.profile-avatar {
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #e8f6f5;
+
+    font-size: 35px;
+}
+
+.profile-top h2 {
+    color: #123c43;
+    font-size: 25px;
+    margin-bottom: 6px;
+}
+
+.profile-top p {
+    color: #087f7b;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ============================================================
+   PROFILE INFORMATION
+   ============================================================ */
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid #edf1f1;
+
+    gap: 20px;
+}
+
+.info-label {
+    color: #718287;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.info-value {
+    color: #163b42;
+    font-size: 15px;
+    text-align: right;
+    word-break: break-word;
+}
+
+.role-badge {
+    display: inline-block;
+
+    padding: 6px 13px;
+
+    border-radius: 20px;
+
+    background: #e8f6f5;
+    color: #087f7b;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* ============================================================
+   PROFILE ACTIONS
+   ============================================================ */
+
+.profile-actions {
+    margin-top: 28px;
+    text-align: right;
+}
+
+.edit-btn {
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    border-radius: 9px;
+
+    background: #087f7b;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    transition: 0.2s ease;
+}
+
+.edit-btn:hover {
+    background: #066864;
+    transform: translateY(-1px);
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+    .page-header {
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .profile-container {
+        padding: 25px 15px;
+    }
+
+    .profile-card {
+        padding: 25px 20px;
+    }
+
+    .info-item {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .info-value {
+        text-align: left;
+    }
+
+    .profile-actions {
+        text-align: left;
+    }
+
+}

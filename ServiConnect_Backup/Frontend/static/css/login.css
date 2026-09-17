@@ -1,0 +1,527 @@
+/* ==========================================================
+   SERVICONNECT LOGIN PAGE
+   ========================================================== */
+
+
+/* ==========================================================
+   GLOBAL RESET
+   ========================================================== */
+
+/* Remove default browser margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+
+    /* Makes sizing easier to control */
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   BODY
+   ========================================================== */
+
+body {
+
+    /* Clean and professional font */
+    font-family: Arial, sans-serif;
+
+    /* Light background */
+    background: #f4f7f8;
+
+    /* Main text color */
+    color: #172a2f;
+}
+
+
+/* ==========================================================
+   MAIN LOGIN PAGE
+   ========================================================== */
+
+.login-page {
+
+    /* Put left and right sections side by side */
+    display: flex;
+
+    /* Use the full screen height */
+    min-height: 100vh;
+}
+
+
+/* ==========================================================
+   LEFT SIDE
+   ========================================================== */
+
+.login-info {
+
+    /* Take 50% of the screen */
+    width: 50%;
+
+    /* Dark teal gradient */
+    background: linear-gradient(
+        135deg,
+        #123c42,
+        #1f6266
+    );
+
+    /* White text */
+    color: white;
+
+    /* Inner spacing */
+    padding: 70px;
+
+    /* Center content vertically */
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+/* ==========================================================
+   LOGO
+   ========================================================== */
+
+.logo {
+
+    /* Logo size */
+    font-size: 32px;
+
+    /* Bold logo */
+    font-weight: 700;
+
+    /* Space below logo */
+    margin-bottom: 60px;
+}
+
+
+/* Highlight "Servi" */
+.logo span {
+
+    /* Teal highlight */
+    color: #75d1c5;
+}
+
+
+/* ==========================================================
+   MAIN HEADING
+   ========================================================== */
+
+.login-info h1 {
+
+    /* Large heading */
+    font-size: 48px;
+
+    /* Space between lines */
+    line-height: 1.15;
+
+    /* Space below heading */
+    margin-bottom: 25px;
+}
+
+
+/* ==========================================================
+   DESCRIPTION
+   ========================================================== */
+
+.login-info > p {
+
+    /* Description size */
+    font-size: 17px;
+
+    /* Comfortable line spacing */
+    line-height: 1.7;
+
+    /* Slightly transparent */
+    opacity: 0.85;
+
+    /* Limit width */
+    max-width: 520px;
+
+    /* Space below */
+    margin-bottom: 40px;
+}
+
+
+/* ==========================================================
+   FEATURES
+   ========================================================== */
+
+.feature {
+
+    /* Put icon and text next to each other */
+    display: flex;
+
+    /* Space between icon and text */
+    gap: 18px;
+
+    /* Space between features */
+    margin-bottom: 28px;
+}
+
+
+/* Feature icon */
+.feature-icon {
+
+    /* Width */
+    width: 35px;
+
+    /* Height */
+    height: 35px;
+
+    /* Make it circular */
+    border-radius: 50%;
+
+    /* Teal background */
+    background: #75d1c5;
+
+    /* Dark check mark */
+    color: #123c42;
+
+    /* Center the check mark */
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    /* Bold check mark */
+    font-weight: bold;
+}
+
+
+/* Feature heading */
+.feature h3 {
+
+    /* Heading size */
+    font-size: 17px;
+
+    /* Space below */
+    margin-bottom: 7px;
+}
+
+
+/* Feature description */
+.feature p {
+
+    /* Smaller text */
+    font-size: 14px;
+
+    /* Slight transparency */
+    opacity: 0.75;
+}
+
+
+/* ==========================================================
+   RIGHT LOGIN CARD
+   ========================================================== */
+
+.login-card {
+
+    /* Take remaining 50% */
+    width: 50%;
+
+    /* White background */
+    background: white;
+
+    /* Center the form */
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    /* Add spacing around form */
+    padding: 60px 90px;
+}
+
+
+/* ==========================================================
+   LOGIN HEADING
+   ========================================================== */
+
+.login-card h2 {
+
+    /* Heading size */
+    font-size: 34px;
+
+    /* Dark teal */
+    color: #17373c;
+
+    /* Space below */
+    margin-bottom: 10px;
+}
+
+
+/* Subtitle */
+.form-subtitle {
+
+    /* Gray text */
+    color: #7a898c;
+
+    /* Font size */
+    font-size: 15px;
+
+    /* Space below */
+    margin-bottom: 20px;
+}
+
+
+/* ==========================================================
+   REGISTER TEXT
+   ========================================================== */
+
+.register-text {
+
+    /* Gray text */
+    color: #6f7d80;
+
+    /* Space below */
+    margin-bottom: 30px;
+}
+
+
+/* Register links */
+.register-text a,
+.bottom-register a,
+.forgot-password a {
+
+    /* Teal color */
+    color: #167b78;
+
+    /* Bold */
+    font-weight: 600;
+
+    /* Remove underline */
+    text-decoration: none;
+}
+
+
+/* Hover effect */
+.register-text a:hover,
+.bottom-register a:hover,
+.forgot-password a:hover {
+
+    /* Add underline */
+    text-decoration: underline;
+}
+
+
+/* ==========================================================
+   FORM GROUP
+   ========================================================== */
+
+.form-group {
+
+    /* Space between form fields */
+    margin-bottom: 20px;
+}
+
+
+/* Labels */
+.form-group label {
+
+    /* Put label on separate line */
+    display: block;
+
+    /* Font size */
+    font-size: 14px;
+
+    /* Bold label */
+    font-weight: 600;
+
+    /* Label color */
+    color: #344b4f;
+
+    /* Space below */
+    margin-bottom: 7px;
+}
+
+
+/* ==========================================================
+   INPUTS
+   ========================================================== */
+
+.form-group input {
+
+    /* Full width */
+    width: 100%;
+
+    /* Input height */
+    height: 50px;
+
+    /* Light border */
+    border: 1px solid #d6e0e1;
+
+    /* Rounded corners */
+    border-radius: 9px;
+
+    /* Inner spacing */
+    padding: 0 15px;
+
+    /* Font size */
+    font-size: 14px;
+
+    /* Very light background */
+    background: #fbfcfc;
+
+    /* Smooth focus effect */
+    transition: 0.3s;
+}
+
+
+/* ==========================================================
+   INPUT FOCUS
+   ========================================================== */
+
+.form-group input:focus {
+
+    /* Remove browser outline */
+    outline: none;
+
+    /* Teal border */
+    border-color: #1f8a87;
+
+    /* Soft glow */
+    box-shadow:
+        0 0 0 3px
+        rgba(31, 138, 135, 0.12);
+}
+
+
+/* ==========================================================
+   FORGOT PASSWORD
+   ========================================================== */
+
+.forgot-password {
+
+    /* Align the link to the right */
+    text-align: right;
+
+    /* Space below */
+    margin-top: -8px;
+
+    margin-bottom: 22px;
+
+    /* Font size */
+    font-size: 13px;
+}
+
+
+/* ==========================================================
+   LOGIN BUTTON
+   ========================================================== */
+
+.login-btn {
+
+    /* Full width */
+    width: 100%;
+
+    /* Button height */
+    height: 50px;
+
+    /* Remove border */
+    border: none;
+
+    /* Rounded corners */
+    border-radius: 9px;
+
+    /* Teal background */
+    background: #167b78;
+
+    /* White text */
+    color: white;
+
+    /* Text size */
+    font-size: 15px;
+
+    /* Bold */
+    font-weight: 600;
+
+    /* Show pointer cursor */
+    cursor: pointer;
+
+    /* Smooth animation */
+    transition: 0.3s;
+}
+
+
+/* Button hover */
+.login-btn:hover {
+
+    /* Darker teal */
+    background: #105f5d;
+
+    /* Move slightly upward */
+    transform: translateY(-2px);
+
+    /* Shadow */
+    box-shadow:
+        0 8px 20px
+        rgba(22, 123, 120, 0.25);
+}
+
+
+/* ==========================================================
+   BOTTOM REGISTER
+   ========================================================== */
+
+.bottom-register {
+
+    /* Center the text */
+    text-align: center;
+
+    /* Space above */
+    margin-top: 25px;
+
+    /* Gray text */
+    color: #7a898c;
+
+    /* Font size */
+    font-size: 14px;
+}
+
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+    /* Stack sections vertically */
+    .login-page {
+
+        flex-direction: column;
+    }
+
+
+    /* Make both sections full width */
+    .login-info,
+    .login-card {
+
+        width: 100%;
+    }
+
+
+    /* Adjust left section */
+    .login-info {
+
+        padding: 50px 30px;
+    }
+
+
+    /* Smaller heading */
+    .login-info h1 {
+
+        font-size: 38px;
+    }
+
+
+    /* Adjust login card */
+    .login-card {
+
+        padding: 50px 30px;
+    }
+
+}

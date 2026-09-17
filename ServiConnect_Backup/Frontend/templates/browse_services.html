@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Browse Services - ServiConnect</title>
+
+    <!-- Browse Services CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/browse_services.css') }}">
+</head>
+
+<body>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1>Browse Services</h1>
+
+        {% if session.get("user_id") %}
+
+    <a href="{{ url_for('dashboard') }}" class="back-btn">
+        ← Back to Dashboard
+    </a>
+
+{% else %}
+
+    <a href="/" class="back-btn">
+        ← Back to Home
+    </a>
+
+{% endif %}
+
+    </header>
+
+    <!-- Services Section -->
+    <main class="services-container">
+
+        {% if services %}
+
+            {% for service in services %}
+
+                <!-- Individual Service Card -->
+                <div class="service-card">
+
+                    <h2>{{ service.service_name }}</h2>
+
+                    <p>
+                        <strong>Category:</strong>
+                        {{ service.category }}
+                    </p>
+
+                    <p>
+                        <strong>Price:</strong>
+                        ₹{{ service.price }}
+                    </p>
+
+                    <p>
+                        <strong>Description:</strong>
+                        {{ service.description }}
+                    </p>
+
+                    <p>
+                        <strong>Provider:</strong>
+                        {{ service.business_name }}
+                    </p>
+
+                    <p>
+                        <strong>Service Area:</strong>
+                        {{ service.service_area }}
+                    </p>
+
+                    <p>
+                        <strong>Availability:</strong>
+                        {{ service.availability }}
+                    </p>
+
+            <!-- =====================================================
+                BOOK SERVICE BUTTON
+            ===================================================== -->
+
+                <a href="{{ url_for('book_service', service_id=service.service_id) }}"
+                    class="book-btn">
+
+                    Book Service
+
+                </a>
+
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <!-- Message when no services are available -->
+            <div class="no-services">
+                <h2>No Services Available</h2>
+                <p>There are currently no services available.</p>
+            </div>
+
+        {% endif %}
+
+    </main>
+
+</body>
+</html>

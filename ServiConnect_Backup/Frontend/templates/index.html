@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Defines the character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Makes the website responsive on mobile, tablet and desktop -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Website title shown in the browser tab -->
+    <title>ServiConnect | Local Services Made Easy</title>
+
+    <!-- Connects our custom CSS file -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Google Font: Inter gives the website a modern professional appearance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         NAVIGATION BAR
+         ========================================= -->
+
+    <header class="navbar">
+
+        <!-- Website logo -->
+        <div class="logo">
+
+            <!-- Small decorative icon -->
+            <span class="logo-icon">S</span>
+
+            <!-- Website name -->
+            <span>ServiConnect</span>
+
+        </div>
+
+
+        <!-- Navigation links -->
+        <nav class="nav-links">
+
+            <a href="/" class="active">Home</a>
+
+            <a href="{{ url_for('browse_services') }}">Services</a>
+
+            <a href="{{ url_for('browse_providers') }}">Providers</a>
+
+            <a href="{{ url_for('about') }}">About</a>
+
+        </nav>
+
+
+        <!-- Authentication buttons -->
+        <div class="nav-buttons">
+
+            <a href="{{ url_for('login') }}" class="login-btn">
+                Login
+            </a>
+
+            <a href="/register" class="register-btn">
+                Get Started
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         HERO SECTION
+         ========================================= -->
+
+    <main>
+
+        <section class="hero">
+
+            <!-- Left side of hero -->
+            <div class="hero-content">
+
+                <!-- Small badge above heading -->
+                <div class="hero-badge">
+                    <span>✦</span>
+                    Trusted Local Services
+                </div>
+
+
+                <!-- Main heading -->
+                <h1>
+                    Your Local Services,
+                    <span>One Click Away.</span>
+                </h1>
+
+
+                <!-- Description -->
+                <p class="hero-description">
+
+                    Find trusted professionals near you for
+                    home repairs, cleaning, maintenance and
+                    everyday services.
+
+                </p>
+
+
+                <!-- Hero action buttons -->
+                <div class="hero-buttons">
+
+                    <a href="{{ url_for('browse_services') }}" class="primary-btn">
+                        Find a Service
+                    </a>
+
+                    <a href="{{ url_for('register') }}" class="secondary-btn">
+                        Become a Provider
+                    </a>
+
+                </div>
+
+
+                <!-- Small trust information -->
+                <div class="trust-info">
+
+                    <div class="trust-item">
+                        <strong>500+</strong>
+                        <span>Professionals</span>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="trust-item">
+                        <strong>1,000+</strong>
+                        <span>Services Booked</span>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="trust-item">
+                        <strong>4.8/5</strong>
+                        <span>Customer Rating</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Right side of hero -->
+            <div class="hero-visual">
+
+                <!-- Main service card -->
+                <div class="service-preview">
+
+                    <!-- Decorative top section -->
+                    <div class="preview-header">
+
+                        <span class="status-dot"></span>
+
+                        <span>Available Professionals</span>
+
+                    </div>
+
+
+                    <!-- Professional card -->
+                    <div class="professional-card">
+
+                        <div class="professional-icon">
+                            🔧
+                        </div>
+
+                        <div class="professional-info">
+
+                            <h3>Expert Electrician</h3>
+
+                            <p>Home Electrical Services</p>
+
+                            <div class="rating">
+                                ★ 4.9
+                                <span>(120 reviews)</span>
+                            </div>
+
+                        </div>
+
+                        <div class="verified">
+                            ✓
+                        </div>
+
+                    </div>
+
+
+                    <!-- Professional card -->
+                    <div class="professional-card">
+
+                        <div class="professional-icon">
+                            🧹
+                        </div>
+
+                        <div class="professional-info">
+
+                            <h3>Home Cleaning</h3>
+
+                            <p>Professional Cleaning Service</p>
+
+                            <div class="rating">
+                                ★ 4.8
+                                <span>(96 reviews)</span>
+                            </div>
+
+                        </div>
+
+                        <div class="verified">
+                            ✓
+                        </div>
+
+                    </div>
+
+
+                    <!-- Professional card -->
+                    <div class="professional-card">
+
+                        <div class="professional-icon">
+                            🔧
+                        </div>
+
+                        <div class="professional-info">
+
+                            <h3>Plumbing Expert</h3>
+
+                            <p>Repair & Maintenance</p>
+
+                            <div class="rating">
+                                ★ 4.9
+                                <span>(85 reviews)</span>
+                            </div>
+
+                        </div>
+
+                        <div class="verified">
+                            ✓
+                        </div>
+
+                    </div>
+
+
+                    <!-- Preview button -->
+                    <a href="{{ url_for('browse_services') }}">
+                        View all services →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             SERVICES SECTION
+             ========================================= -->
+
+        <section class="services-section">
+
+            <!-- Section heading -->
+            <div class="section-heading">
+
+                <div>
+                    <p class="section-label">WHAT WE OFFER</p>
+
+                    <h2>
+                        Services for Every Need
+                    </h2>
+                </div>
+
+
+                <!-- View all link -->
+                <a href="{{ url_for('browse_services') }}" class="view-all">
+                    View all services →
+                </a>
+
+            </div>
+
+
+            <!-- Service cards -->
+            <div class="services-grid">
+
+
+                <!-- Service 1 -->
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        ⚡
+                    </div>
+
+                    <h3>Electrician</h3>
+
+                    <p>
+                        Electrical repairs, installation
+                        and maintenance.
+                    </p>
+
+                    <a href="#">
+                        Explore service →
+                    </a>
+
+                </div>
+
+
+                <!-- Service 2 -->
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        🔧
+                    </div>
+
+                    <h3>Plumbing</h3>
+
+                    <p>
+                        Reliable plumbing repair and
+                        maintenance services.
+                    </p>
+
+                    <a href="#">
+                        Explore service →
+                    </a>
+
+                </div>
+
+
+                <!-- Service 3 -->
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        🧹
+                    </div>
+
+                    <h3>Cleaning</h3>
+
+                    <p>
+                        Professional home and office
+                        cleaning services.
+                    </p>
+
+                    <a href="#">
+                        Explore service →
+                    </a>
+
+                </div>
+
+
+                <!-- Service 4 -->
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        ❄️
+                    </div>
+
+                    <h3>AC Repair</h3>
+
+                    <p>
+                        AC installation, servicing
+                        and repair.
+                    </p>
+
+                    <a href="#">
+                        Explore service →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             HOW IT WORKS
+             ========================================= -->
+
+        <section class="how-section">
+
+            <div class="section-heading centered">
+
+                <p class="section-label">
+                    SIMPLE & EASY
+                </p>
+
+                <h2>
+                    How ServiConnect Works
+                </h2>
+
+                <p>
+                    Get the service you need in just a few simple steps.
+                </p>
+
+            </div>
+
+
+            <div class="steps">
+
+                <!-- Step 1 -->
+                <div class="step">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <h3>Choose a Service</h3>
+
+                    <p>
+                        Browse through trusted local services
+                        and choose what you need.
+                    </p>
+
+                </div>
+
+
+                <!-- Step 2 -->
+                <div class="step">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+                    <h3>Select a Professional</h3>
+
+                    <p>
+                        Compare professionals based on
+                        ratings, experience and pricing.
+                    </p>
+
+                </div>
+
+
+                <!-- Step 3 -->
+                <div class="step">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+                    <h3>Book & Relax</h3>
+
+                    <p>
+                        Select your preferred date and time
+                        and book your service.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div>
+
+                <div class="logo footer-logo">
+
+                    <span class="logo-icon">S</span>
+
+                    <span>ServiConnect</span>
+
+                </div>
+
+                <p>
+                    Connecting you with trusted
+                    local professionals.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#">Services</a>
+
+                <a href="#">Providers</a>
+
+                <a href="#">About</a>
+
+                <a href="#">Contact</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 ServiConnect. All rights reserved.
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

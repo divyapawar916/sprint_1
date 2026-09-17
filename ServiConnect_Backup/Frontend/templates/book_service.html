@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Service - ServiConnect</title>
+
+    <!-- Booking page CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/book_service.css') }}">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         PAGE HEADER
+         ===================================================== -->
+
+    <header class="page-header">
+
+        <h1>Book Service</h1>
+
+        <!-- Return to Browse Services -->
+        <a href="{{ url_for('browse_services') }}"
+           class="back-btn">
+            ← Back to Services
+        </a>
+
+    </header>
+
+
+    <!-- =====================================================
+         BOOKING FORM
+         ===================================================== -->
+
+    <main class="booking-container">
+
+        <div class="booking-card">
+
+            <!-- Service name -->
+            <h2>{{ service.service_name }}</h2>
+
+            <!-- Provider information -->
+            <p class="provider">
+                Provided by: {{ service.business_name }}
+            </p>
+
+
+            <!-- Booking form -->
+            <form method="POST">
+
+
+                <!-- -------------------------------------------------
+                     BOOKING DATE
+                     ------------------------------------------------- -->
+
+                <label for="booking_date">
+                    Select Date
+                </label>
+
+                <input
+                    type="date"
+                    id="booking_date"
+                    name="booking_date"
+                    required
+                >
+
+
+                <!-- -------------------------------------------------
+                     BOOKING TIME
+                     ------------------------------------------------- -->
+
+                <label for="booking_time">
+                    Select Time
+                </label>
+
+                <input
+                    type="time"
+                    id="booking_time"
+                    name="booking_time"
+                    required
+                >
+
+
+                <!-- -------------------------------------------------
+                     SERVICE ADDRESS
+                     ------------------------------------------------- -->
+
+                <label for="address">
+                    Service Address
+                </label>
+
+                <textarea
+                    id="address"
+                    name="address"
+                    rows="3"
+                    placeholder="Enter the address where the service is required"
+                    required
+                ></textarea>
+
+
+                <!-- -------------------------------------------------
+                     ADDITIONAL NOTES
+                     ------------------------------------------------- -->
+
+                <label for="notes">
+                    Additional Notes
+                </label>
+
+                <textarea
+                    id="notes"
+                    name="notes"
+                    rows="3"
+                    placeholder="Any additional information for the provider"
+                ></textarea>
+
+
+                <!-- -------------------------------------------------
+                     SUBMIT BUTTON
+                     ------------------------------------------------- -->
+
+                <button type="submit">
+                    Confirm Booking
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
